@@ -1,0 +1,94 @@
+{
+  "weights": {
+    "AAPL": 0.25,
+    "JPM": 0.25,
+    "XOM": 0.2,
+    "JNJ": 0.15,
+    "WMT": 0.15
+  },
+  "portfolio_value": 1000000,
+  "confidence": 0.95,
+  "var_summary": {
+    "historical_var_pct": 1.458,
+    "parametric_var_pct": 1.596,
+    "monte_carlo_var_pct": 1.51,
+    "expected_shortfall_pct": 2.13,
+    "historical_var_dollar": 14581.23,
+    "parametric_var_dollar": 15957.6,
+    "monte_carlo_var_dollar": 15103.46,
+    "expected_shortfall_dollar": 21296.47
+  },
+  "scenarios": {
+    "2008_financial_crisis": {
+      "scenario": "2008_financial_crisis",
+      "portfolio_return_pct": -44.25,
+      "dollar_pnl": -442500.0,
+      "per_asset_breakdown": {
+        "AAPL": {
+          "weight": 0.25,
+          "shock_pct": -55.00000000000001,
+          "contribution_pct": -13.750000000000002
+        },
+        "JPM": {
+          "weight": 0.25,
+          "shock_pct": -75.0,
+          "contribution_pct": -18.75
+        },
+        "XOM": {
+          "weight": 0.2,
+          "shock_pct": -40.0,
+          "contribution_pct": -8.000000000000002
+        },
+        "JNJ": {
+          "weight": 0.15,
+          "shock_pct": -15.0,
+          "contribution_pct": -2.25
+        },
+        "WMT": {
+          "weight": 0.15,
+          "shock_pct": -10.0,
+          "contribution_pct": -1.5
+        }
+      }
+    },
+    "2020_covid_crash": {
+      "scenario": "2020_covid_crash",
+      "portfolio_return_pct": -35.8,
+      "dollar_pnl": -358000.0,
+      "per_asset_breakdown": {
+        "AAPL": {
+          "weight": 0.25,
+          "shock_pct": -31.0,
+          "contribution_pct": -7.75
+        },
+        "JPM": {
+          "weight": 0.25,
+          "shock_pct": -42.0,
+          "contribution_pct": -10.5
+        },
+        "XOM": {
+          "weight": 0.2,
+          "shock_pct": -60.0,
+          "contribution_pct": -12.0
+        },
+        "JNJ": {
+          "weight": 0.15,
+          "shock_pct": -24.0,
+          "contribution_pct": -3.5999999999999996
+        },
+        "WMT": {
+          "weight": 0.15,
+          "shock_pct": -13.0,
+          "contribution_pct": -1.95
+        }
+      }
+    }
+  },
+  "correlation_stress": {
+    "normal_var_pct": 1.596,
+    "stressed_var_pct": 2.432,
+    "normal_var_dollar": 15957.6,
+    "stressed_var_dollar": 24321.06,
+    "var_increase_pct": 52.4
+  }
+}
