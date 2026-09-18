@@ -50,11 +50,11 @@ they're needed most.
 ## Results
 
 ```bash
-python run\_analysis.py --tickers AAPL JPM XOM JNJ WMT --weights 0.25 0.25 0.2 0.15 0.15 --years 5
-python notebooks/plot\_risk\_analysis.py
+python run_analysis.py --tickers AAPL JPM XOM JNJ WMT --weights 0.25 0.25 0.2 0.15 0.15 --years 5
+python notebooks/plot_risk_analysis.py
 ```
 
-!\[Risk Analysis](notebooks/risk\_analysis.png)
+![Risk Analysis](notebooks/risk_analysis.png)
 
 *(Replace this chart and the numbers below with your own real output.)*
 
@@ -64,8 +64,8 @@ python notebooks/plot\_risk\_analysis.py
 |Parametric VaR (95%, 1-day)|1.60%|
 |Monte Carlo VaR (95%, 1-day)|1.51%|
 |Expected Shortfall (95%)|-44.25%|
-|2008 crisis scenario P\&L|-35.80%|
-|2020 COVID scenario P\&L|1.60%|
+|2008 crisis scenario P&L|-35.80%|
+|2020 COVID scenario P&L|1.60%|
 |VaR increase under correlation breakdown|2.43% (+52.4%)|
 
 **Interpretation:** the three methods disagree by roughly 0.14 percentage
@@ -106,7 +106,7 @@ increase, simply because it was never diversified to begin with.
 
 Of the two historical scenarios, 2008 is the more damaging (-44.25% vs
 
-\-35.80%), driven primarily by the 25% allocation to JPM: financials were
+-35.80%), driven primarily by the 25% allocation to JPM: financials were
 
 the epicentre of that crisis. The 2020 COVID shock hits differently, with
 
@@ -139,26 +139,26 @@ alone can create a false sense of precision.
 pip install -r requirements.txt
 
 # Run the full analysis on real data (requires internet access)
-python run\_analysis.py --tickers AAPL JPM XOM JNJ WMT --weights 0.25 0.25 0.2 0.15 0.15 --years 5
+python run_analysis.py --tickers AAPL JPM XOM JNJ WMT --weights 0.25 0.25 0.2 0.15 0.15 --years 5
 
 # Generate the visualization from the saved results
-python notebooks/plot\_risk\_analysis.py
+python notebooks/plot_risk_analysis.py
 
 # Run tests
-python tests/test\_var\_models.py
-python tests/test\_stress\_testing.py
+python tests/test_var_models.py
+python tests/test_stress_testing.py
 ```
 
-Useful flags on `run\_analysis.py`:
+Useful flags on `run_analysis.py`:
 
 * `--tickers` / `--weights`: define your own portfolio (weights must sum to 1)
 * `--years`: how many years of historical data to use
-* `--portfolio-value`: dollar size of the portfolio for $ P\&L figures
+* `--portfolio-value`: dollar size of the portfolio for $ P&L figures
 * `--confidence`: VaR confidence level (default 0.95)
 
 ## Validation
 
-All 8 VaR model tests pass (`tests/test\_var\_models.py`), including checks
+All 8 VaR model tests pass (`tests/test_var_models.py`), including checks
 that:
 
 * Expected Shortfall is always >= VaR (true by definition)
@@ -168,7 +168,7 @@ practice assumes
 is normally distributed
 * 99% VaR is always more extreme than 95% VaR
 
-All 7 stress testing tests pass (`tests/test\_stress\_testing.py`), including
+All 7 stress testing tests pass (`tests/test_stress_testing.py`), including
 a check that VaR under a correlation breakdown is always greater than or
 equal to normal-times VaR, and that perfect correlation (1.0) reduces
 portfolio risk to the simple weighted sum of individual asset volatilities
@@ -179,16 +179,16 @@ portfolio risk to the simple weighted sum of individual asset volatilities
 ```
 risk-modeling/
 ├── risk/
-│   ├── var\_models.py       # Historical, parametric, and Monte Carlo VaR + Expected Shortfall
-│   └── stress\_testing.py   # Historical crisis scenarios + correlation breakdown
+│   ├── var_models.py       # Historical, parametric, and Monte Carlo VaR + Expected Shortfall
+│   └── stress_testing.py   # Historical crisis scenarios + correlation breakdown
 ├── tests/
-│   ├── test\_var\_models.py
-│   └── test\_stress\_testing.py
+│   ├── test_var_models.py
+│   └── test_stress_testing.py
 ├── notebooks/
-│   ├── plot\_risk\_analysis.py
-│   └── risk\_analysis.png   # Generated chart
+│   ├── plot_risk_analysis.py
+│   └── risk_analysis.png   # Generated chart
 ├── data/                   # Saved returns data and analysis summary (CSV/JSON)
-├── run\_analysis.py         # Main entry point: fetch data + run full analysis
+├── run_analysis.py         # Main entry point: fetch data + run full analysis
 ├── requirements.txt
 └── README.md
 ```
