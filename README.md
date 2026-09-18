@@ -56,7 +56,7 @@ python notebooks/plot_risk_analysis.py
 
 ![Risk Analysis](notebooks/risk_analysis.png)
 
-*(Replace this chart and the numbers below with your own real output.)*
+
 
 |Metric|Value|
 |-|-|
